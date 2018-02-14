@@ -42,6 +42,18 @@ public class CacheConfiguration {
             cm.createCache(pl.przepisnik.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(pl.przepisnik.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(pl.przepisnik.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Ingredient.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Ingredient.class.getName() + ".amonts", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Measurement.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Measurement.class.getName() + ".amonts", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Amont.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Stage.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Stage.class.getName() + ".amonts", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Recipe.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Recipe.class.getName() + ".stages", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Recipe.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Category.class.getName(), jcacheConfiguration);
+            cm.createCache(pl.przepisnik.domain.Category.class.getName() + ".recipes", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

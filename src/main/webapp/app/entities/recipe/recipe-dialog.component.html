@@ -1,0 +1,73 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRecipeLabel" jhiTranslate="przepisnikApp.recipe.home.createOrEditLabel">Create or edit a Recipe</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!recipe.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="recipe.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.recipe.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                [(ngModel)]="recipe.title" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.recipe.description" for="field_description">Description</label>
+            <textarea class="form-control" name="description" id="field_description"
+                [(ngModel)]="recipe.description" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.recipe.extra" for="field_extra">Extra</label>
+            <textarea class="form-control" name="extra" id="field_extra"
+                [(ngModel)]="recipe.extra" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.recipe.image" for="field_image">Image</label>
+            <div>
+                <img [src]="'data:' + recipe.imageContentType + ';base64,' + recipe.image" style="max-height: 100px;" *ngIf="recipe.image" alt="recipe image"/>
+                <div *ngIf="recipe.image" class="form-text text-danger clearfix">
+                    <span class="pull-left">{{recipe.imageContentType}}, {{byteSize(recipe.image)}}</span>
+                    <button type="button" (click)="clearInputImage('image', 'imageContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                        <span class="fa fa-times"></span>
+                    </button>
+                </div>
+                <input type="file" id="file_image" (change)="setFileData($event, recipe, 'image', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                [(ngModel)]="recipe.image" />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                [(ngModel)]="recipe.imageContentType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.recipe.rating" for="field_rating">Rating</label>
+            <select class="form-control" name="rating" [(ngModel)]="recipe.rating" id="field_rating" >
+                <option value="1">{{'przepisnikApp.Rating.1' | translate}}</option>
+                <option value="2">{{'przepisnikApp.Rating.2' | translate}}</option>
+                <option value="3">{{'przepisnikApp.Rating.3' | translate}}</option>
+                <option value="4">{{'przepisnikApp.Rating.4' | translate}}</option>
+                <option value="5">{{'przepisnikApp.Rating.5' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="przepisnikApp.recipe.category" for="field_category">Category</label>
+            <select class="form-control" id="field_category" multiple name="category" [(ngModel)]="recipe.categories">
+                <option [ngValue]="getSelected(recipe.categories, categoryOption)" *ngFor="let categoryOption of categories; trackBy: trackCategoryById">{{categoryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

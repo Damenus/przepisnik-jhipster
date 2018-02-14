@@ -1,0 +1,29 @@
+
+{
+    "przepisnikApp": {
+        "recipe" : {
+            "home": {
+                "title": "Recipes",
+                "createLabel": "Dodaj Recipe",
+                "createOrEditLabel": "Dodaj lub edytuj: Recipe",
+                "search": "Szukaj Recipe"
+            },
+            "created": "Utworzono nowy Recipe z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Recipe z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Recipe z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Recipe {{ id }}?"
+            },
+            "detail": {
+                "title": "Recipe"
+            },
+            "title": "Title",
+            "description": "Description",
+            "extra": "Extra",
+            "image": "Image",
+            "rating": "Rating",
+            "stage": "Stage",
+            "category": "Category"
+        }
+    }
+}

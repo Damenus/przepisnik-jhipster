@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "ingredient",
+            "otherEntityName": "ingredient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "measurement",
+            "otherEntityName": "measurement",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "stage",
+            "otherEntityName": "stage",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "number",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180214225451",
+    "entityTableName": "amont",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

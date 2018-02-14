@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "stage",
+            "otherEntityName": "stage",
+            "otherEntityRelationshipName": "recipe"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "recipe",
+            "relationshipName": "category",
+            "otherEntityName": "category",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "extra",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "rating",
+            "fieldType": "Rating",
+            "fieldValues": "1,2,3,4,5"
+        }
+    ],
+    "changelogDate": "20180214225453",
+    "entityTableName": "recipe",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

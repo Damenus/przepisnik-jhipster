@@ -1,0 +1,26 @@
+
+{
+    "przepisnikApp": {
+        "amont" : {
+            "home": {
+                "title": "Amonts",
+                "createLabel": "Dodaj Amont",
+                "createOrEditLabel": "Dodaj lub edytuj: Amont",
+                "search": "Szukaj Amont"
+            },
+            "created": "Utworzono nowy Amont z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Amont z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Amont z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Amont {{ id }}?"
+            },
+            "detail": {
+                "title": "Amont"
+            },
+            "number": "Number",
+            "ingredient": "Ingredient",
+            "measurement": "Measurement",
+            "stage": "Stage"
+        }
+    }
+}
