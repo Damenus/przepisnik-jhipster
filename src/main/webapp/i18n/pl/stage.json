@@ -1,0 +1,26 @@
+
+{
+    "przepisnikApp": {
+        "stage" : {
+            "home": {
+                "title": "Stages",
+                "createLabel": "Dodaj Stage",
+                "createOrEditLabel": "Dodaj lub edytuj: Stage",
+                "search": "Szukaj Stage"
+            },
+            "created": "Utworzono nowy Stage z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Stage z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Stage z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Stage {{ id }}?"
+            },
+            "detail": {
+                "title": "Stage"
+            },
+            "title": "Title",
+            "text": "Text",
+            "amont": "Amont",
+            "recipe": "Recipe"
+        }
+    }
+}

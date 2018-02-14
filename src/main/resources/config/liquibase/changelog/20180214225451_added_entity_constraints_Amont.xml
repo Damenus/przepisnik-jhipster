@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Amont.
+    -->
+    <changeSet id="20180214225451-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ingredient_id"
+                                 baseTableName="amont"
+                                 constraintName="fk_amont_ingredient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ingredient"/>
+
+        <addForeignKeyConstraint baseColumnNames="measurement_id"
+                                 baseTableName="amont"
+                                 constraintName="fk_amont_measurement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="measurement"/>
+
+        <addForeignKeyConstraint baseColumnNames="stage_id"
+                                 baseTableName="amont"
+                                 constraintName="fk_amont_stage_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stage"/>
+
+    </changeSet>
+</databaseChangeLog>

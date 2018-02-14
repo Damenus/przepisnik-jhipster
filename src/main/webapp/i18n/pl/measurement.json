@@ -1,0 +1,24 @@
+
+{
+    "przepisnikApp": {
+        "measurement" : {
+            "home": {
+                "title": "Measurements",
+                "createLabel": "Dodaj Measurement",
+                "createOrEditLabel": "Dodaj lub edytuj: Measurement",
+                "search": "Szukaj Measurement"
+            },
+            "created": "Utworzono nowy Measurement z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Measurement z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Measurement z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Measurement {{ id }}?"
+            },
+            "detail": {
+                "title": "Measurement"
+            },
+            "name": "Name",
+            "amont": "Amont"
+        }
+    }
+}

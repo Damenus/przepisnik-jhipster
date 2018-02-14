@@ -1,0 +1,58 @@
+entity Ingredient {
+	name String required
+}
+
+entity Measurement {
+	name String required
+}
+
+entity Amont {
+	number Integer
+}
+
+entity Stage {
+	title String
+	text TextBlob
+}
+
+enum Rating {
+	1, 2, 3, 4, 5
+}
+
+entity Recipe {
+	title String
+    description TextBlob
+    extra TextBlob
+    image ImageBlob
+    rating Rating
+}
+
+entity Category {
+	name String required
+}
+
+relationship OneToMany {
+	Ingredient{amont} to  Amont
+}
+
+relationship OneToMany {
+	Stage{amont} to Amont
+}
+
+relationship OneToMany {
+	Measurement{amont} to Amont
+}
+
+relationship OneToMany {
+	Recipe{stage} to Stage
+}
+
+relationship ManyToMany {
+	Recipe{category} to Category{recipe}
+}
+
+paginate Category, Recipe, Ingredient, Measurement with infinite-scroll
+
+dto * with mapstruct
+
+

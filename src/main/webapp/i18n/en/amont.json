@@ -1,0 +1,26 @@
+
+{
+    "przepisnikApp": {
+        "amont" : {
+            "home": {
+                "title": "Amonts",
+                "createLabel": "Create a new Amont",
+                "createOrEditLabel": "Create or edit a Amont",
+                "search": "Search for Amont"
+            },
+            "created": "A new Amont is created with identifier {{ param }}",
+            "updated": "A Amont is updated with identifier {{ param }}",
+            "deleted": "A Amont is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Amont {{ id }}?"
+            },
+            "detail": {
+                "title": "Amont"
+            },
+            "number": "Number",
+            "ingredient": "Ingredient",
+            "measurement": "Measurement",
+            "stage": "Stage"
+        }
+    }
+}

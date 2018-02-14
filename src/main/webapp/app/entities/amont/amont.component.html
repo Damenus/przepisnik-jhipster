@@ -1,0 +1,89 @@
+<div>
+    <h2>
+        <span jhiTranslate="przepisnikApp.amont.home.title">Amonts</span>
+        <button class="btn btn-primary float-right jh-create-entity create-amont" [routerLink]="['/', { outlets: { popup: ['amont-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="przepisnikApp.amont.home.createLabel">
+            Create new Amont
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'przepisnikApp.amont.home.search' | translate }}">
+                    <button class="input-group-append btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-append btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="amonts">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="przepisnikApp.amont.number">Number</span></th>
+            <th><span jhiTranslate="przepisnikApp.amont.ingredient">Ingredient</span></th>
+            <th><span jhiTranslate="przepisnikApp.amont.measurement">Measurement</span></th>
+            <th><span jhiTranslate="przepisnikApp.amont.stage">Stage</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let amont of amonts ;trackBy: trackId">
+                <td><a [routerLink]="['../amont', amont.id ]">{{amont.id}}</a></td>
+                <td>{{amont.number}}</td>
+                <td>
+                    <div *ngIf="amont.ingredientId">
+                        <a [routerLink]="['../ingredient', amont.ingredientId  ]" >{{amont.ingredientId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="amont.measurementId">
+                        <a [routerLink]="['../measurement', amont.measurementId  ]" >{{amont.measurementId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="amont.stageId">
+                        <a [routerLink]="['../stage', amont.stageId  ]" >{{amont.stageId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../amont', amont.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'amont/'+ amont.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'amont/'+ amont.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

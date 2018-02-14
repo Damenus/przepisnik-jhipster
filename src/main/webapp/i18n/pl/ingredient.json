@@ -1,0 +1,24 @@
+
+{
+    "przepisnikApp": {
+        "ingredient" : {
+            "home": {
+                "title": "Ingredients",
+                "createLabel": "Dodaj Ingredient",
+                "createOrEditLabel": "Dodaj lub edytuj: Ingredient",
+                "search": "Szukaj Ingredient"
+            },
+            "created": "Utworzono nowy Ingredient z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Ingredient z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Ingredient z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Ingredient {{ id }}?"
+            },
+            "detail": {
+                "title": "Ingredient"
+            },
+            "name": "Name",
+            "amont": "Amont"
+        }
+    }
+}

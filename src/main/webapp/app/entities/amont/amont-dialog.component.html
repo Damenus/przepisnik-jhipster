@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAmontLabel" jhiTranslate="przepisnikApp.amont.home.createOrEditLabel">Create or edit a Amont</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!amont.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="amont.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.amont.number" for="field_number">Number</label>
+            <input type="number" class="form-control" name="number" id="field_number"
+                [(ngModel)]="amont.number" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.amont.ingredient" for="field_ingredient">Ingredient</label>
+            <select class="form-control" id="field_ingredient" name="ingredient" [(ngModel)]="amont.ingredientId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="ingredientOption.id" *ngFor="let ingredientOption of ingredients; trackBy: trackIngredientById">{{ingredientOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.amont.measurement" for="field_measurement">Measurement</label>
+            <select class="form-control" id="field_measurement" name="measurement" [(ngModel)]="amont.measurementId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="measurementOption.id" *ngFor="let measurementOption of measurements; trackBy: trackMeasurementById">{{measurementOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="przepisnikApp.amont.stage" for="field_stage">Stage</label>
+            <select class="form-control" id="field_stage" name="stage" [(ngModel)]="amont.stageId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="stageOption.id" *ngFor="let stageOption of stages; trackBy: trackStageById">{{stageOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

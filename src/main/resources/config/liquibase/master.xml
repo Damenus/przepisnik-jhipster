@@ -5,6 +5,15 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225449_added_entity_Ingredient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225450_added_entity_Measurement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225451_added_entity_Amont.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225452_added_entity_Stage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225453_added_entity_Recipe.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225454_added_entity_Category.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180214225451_added_entity_constraints_Amont.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225452_added_entity_constraints_Stage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180214225453_added_entity_constraints_Recipe.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
