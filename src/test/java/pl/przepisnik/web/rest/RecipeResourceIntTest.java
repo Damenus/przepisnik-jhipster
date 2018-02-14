@@ -57,8 +57,8 @@ public class RecipeResourceIntTest {
     private static final String DEFAULT_IMAGE_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_IMAGE_CONTENT_TYPE = "image/png";
 
-    private static final Rating DEFAULT_RATING = Rating.1;
-    private static final Rating UPDATED_RATING = Rating.2;
+    private static final Rating DEFAULT_RATING = Rating.ONE;
+    private static final Rating UPDATED_RATING = Rating.TWO;
 
     @Autowired
     private RecipeRepository recipeRepository;
