@@ -39,7 +39,7 @@
         {
             "fieldName": "rating",
             "fieldType": "Rating",
-            "fieldValues": "1,2,3,4,5"
+            "fieldValues": "ONE,TWO,THREE,FOUR,FIVE"
         }
     ],
     "changelogDate": "20180214225453",

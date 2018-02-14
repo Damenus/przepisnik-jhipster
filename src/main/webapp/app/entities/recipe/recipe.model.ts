@@ -1,11 +1,11 @@
 import { BaseEntity } from './../../shared';
 
 export const enum Rating {
-    '1',
-    '2',
-    '3',
-    '4',
-    '5'
+    'ONE',
+    'TWO',
+    'THREE',
+    'FOUR',
+    'FIVE'
 }
 
 export class Recipe implements BaseEntity {
